@@ -1,0 +1,6 @@
+.checkbox {
+    width: 25px;
+    height: 25px;
+    accent-color: var(--blue-genie);
+    border: 2px solid var(--blue-genie);
+}

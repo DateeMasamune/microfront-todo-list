@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    column-gap: 16px;
+}
+
+.title {
+    text-align: center;
+    color: var(--black);
+}
+
+.input {
+    flex-grow: 1;
+}

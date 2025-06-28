@@ -1,0 +1,23 @@
+.container {
+    position: relative;
+}
+
+.input {
+    border: 1px solid var(--blue-genie);
+    padding: 8px 16px;
+    height: 38px;
+    width: 100%;
+    border-radius: 5px;
+    background: var(--white);
+}
+
+.icon {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.input:focus-visible {
+    outline: 2px solid var(--blue-genie06);
+}

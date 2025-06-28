@@ -1,0 +1,167 @@
+.rootButton {
+    background: var(--blue-genie);
+    border: unset;
+    cursor: pointer;
+}
+
+.rootButton:hover {
+    background: var(--iris);
+}
+
+/*dropdown button*/
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.button {
+    color: var(--white);
+}
+
+.dropdown .dropList {
+    background: var(--white);
+    position: absolute;
+    margin: unset;
+    padding: 6px 0;
+    list-style-type: none;
+    color: var(--blue-genie);
+    outline: 1px solid var(--blue-genie);
+    border-radius: 5px;
+    overflow: hidden;
+    visibility: hidden;
+    z-index: var(--z-index-list-button);
+}
+
+.dropList .item {
+    padding: 0 10px;
+}
+
+.dropList .item:hover {
+    background: var(--blue-genie-20);
+    cursor: pointer;
+}
+
+.dropdown .button {
+    padding: 10px 50px 10px 10px;
+    border-radius: 5px;
+}
+
+.chevron {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+}
+
+.chevronRotate {
+    animation: rotateChevron .5s ease-in-out;
+    animation-fill-mode: forwards
+}
+
+.showList {
+    animation: showList .5s ease-in-out;
+    animation-fill-mode: forwards
+}
+
+/*theme button*/
+
+.theme {
+    width: 38px;
+    height: 38px;
+    position: relative;
+}
+
+.themeButton {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.themeIcon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*add button*/
+
+.add {
+    border-radius: 50%;
+    background: var(--blue-genie);
+    width: 50px;
+    height: 50px;
+    border: unset;
+    position: relative;
+}
+
+.add::before {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.add::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    left: 50%;
+    transform: translateX(-50%) rotate(90deg);
+}
+
+/*icon button*/
+
+.changeButton {
+    cursor: pointer;
+}
+
+.changeButton:hover {
+    fill: var(--iris);
+}
+
+/*delete button*/
+
+.deleteButton {
+    cursor: pointer;
+}
+
+.deleteButton:hover {
+    fill: var(--life-guard);
+}
+
+/*simple button*/
+
+.simpleButton {
+    padding: 10px 22px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+
+@keyframes rotateChevron {
+    0% {
+        transform: translateY(-50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(-50%) rotate(180deg);
+    }
+}
+
+@keyframes showList {
+    0% {
+        transform: scale(0);
+        visibility: visible;
+    }
+
+    100% {
+        transform: scale(1);
+        visibility: visible;
+    }
+}

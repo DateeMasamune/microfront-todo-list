@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 30px 0 20px;
+    cursor: pointer;
+}
+
+.container+.container {
+    border-top: 1px solid var(--blue-genie);
+}
+
+.name {
+    font-size: 20px;
+    flex-grow: 1;
+}
+
+.textThrough {
+    text-decoration: line-through;
+    color: var(--cursed-grey);
+}
+
+.button {
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.container:hover .button {
+    opacity: 1;
+    visibility: visible;
+}
+
+.input {
+    width: 100%;
+}

@@ -1,0 +1,17 @@
+.container {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.container .addButton {
+  position: fixed;
+  bottom: 32px;
+  right: 20%;
+}
+
+.emptyState {
+  margin-top: 35px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
