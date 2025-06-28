@@ -1,4 +1,4 @@
-import { lazy, useCallback, type ChangeEvent } from "react"
+import { lazy, memo, useCallback, type ChangeEvent } from "react"
 const Input = lazy(() => import("ui-kit/Input"))
 const Button = lazy(() => import('ui-kit/Button'))
 import { debounce } from 'throttle-debounce';
@@ -20,7 +20,7 @@ const dropListForButton = [
     },
 ]
 
-const TodoHeader = () => {
+const TodoHeader = memo(() => {
     const filteredTodosStatus = useStore(state => state.filteredTodosStatus)
     const filterdTodosName = useStore(state => state.filterdTodosName)
     const debounceFilteredTodosName = debounce(200, (value: string | undefined) => filterdTodosName(value))
@@ -43,6 +43,6 @@ const TodoHeader = () => {
 
         </div>
     )
-}
+})
 
 export default TodoHeader

@@ -1,4 +1,4 @@
-import { lazy, useCallback, useReducer, useState, type ChangeEvent } from 'react'
+import { lazy, memo, useCallback, useReducer, useState, type ChangeEvent } from 'react'
 import { useStore } from 'shared/store'
 import { todoStatus } from 'shared/constants'
 
@@ -11,10 +11,10 @@ import type { ITodos } from 'shared/store/store'
 import clsx from 'clsx'
 
 interface IProps extends ITodos {
-    remove: () => void
+    remove: (id: number) => void
 }
 
-const TodoRow = ({ title, remove, id, status }: IProps) => {
+const TodoRow = memo(({ title, remove, id, status }: IProps) => {
     const [checked, setChecked] = useState(status === todoStatus.complete)
     const [changeTitle, dispatchChangeTitle] = useReducer((prev) => !prev, false)
 
@@ -55,8 +55,8 @@ const TodoRow = ({ title, remove, id, status }: IProps) => {
                 [styles.textThrough]: checked
             })}>{title}</p>}
         <Button variant="change" className={styles.button} onClick={dispatchChangeTitle} />
-        <Button variant="remove" className={styles.button} onClick={remove} />
+        <Button variant="remove" className={styles.button} onClick={() => remove(id)} />
     </div>
-}
+})
 
 export default TodoRow

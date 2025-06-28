@@ -1,6 +1,6 @@
 import { Modal } from 'ui-kit/Modal'
 import { useStore } from 'shared/store'
-import { lazy, useCallback, type ActionDispatch, type ChangeEvent } from 'react'
+import { lazy, memo, useCallback, type ActionDispatch, type ChangeEvent } from 'react'
 import Button from 'ui-kit/Button'
 import styles from './ModalTodoAdd.module.css'
 const Input = lazy(() => import('ui-kit/Input'))
@@ -10,7 +10,7 @@ interface IProps {
     dispathModalIsOpen: ActionDispatch<[]>
 }
 
-export const ModalTodoAdd = ({ dispathModalIsOpen, modalIsOpen }: IProps) => {
+export const ModalTodoAdd = memo(({ dispathModalIsOpen, modalIsOpen }: IProps) => {
     const todoTitle = useStore(state => state.todoTitle)
 
     const setTodoTitle = useStore?.(state => state.setTodoTitle)
@@ -52,4 +52,4 @@ export const ModalTodoAdd = ({ dispathModalIsOpen, modalIsOpen }: IProps) => {
             </div>
         </Modal>
     )
-}
+})
